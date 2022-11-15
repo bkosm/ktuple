@@ -63,5 +63,3 @@ internal class TupleTest {
         assertNull(uut._1)
     }
 }
-
-private typealias t = Tuple
