@@ -7,7 +7,7 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 import kotlin.test.expect
 
-class ParameterizedVariationsTest {
+internal class ParameterizedVariationsTest {
     companion object {
         private val TestSet = listOf(
             t("Of1", t(1)),
