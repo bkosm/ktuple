@@ -36,6 +36,13 @@ internal class ParameterizedVariationsTest {
         }
     }
 
+    @TestFactory
+    fun isEmpty() = TestSet.map { (name, tuple) ->
+        dynamicTest("for $name") {
+            assertFalse { tuple.isEmpty() }
+        }
+    }
+
     private val element = AtomicInteger(1)
 
     @TestFactory
