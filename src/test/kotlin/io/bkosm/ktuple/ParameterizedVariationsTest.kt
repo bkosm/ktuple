@@ -8,8 +8,8 @@ import kotlin.test.assertTrue
 import kotlin.test.expect
 
 internal class ParameterizedVariationsTest {
-    companion object {
-        private val TestSet = listOf(
+    private companion object {
+        val TestSet = listOf(
             t("Of1", t(1)),
             t("Of2", t(1, 2L)),
             t("Of3", t(1, 2L, 3.0)),
@@ -18,6 +18,8 @@ internal class ParameterizedVariationsTest {
             t("Of6", t(1, 2L, 3.0, 4, 5L, 6.0)),
         )
     }
+
+    private val element = AtomicInteger(1)
 
     @TestFactory
     fun contains() = TestSet.map { (name, tuple) ->
@@ -42,8 +44,6 @@ internal class ParameterizedVariationsTest {
             assertFalse { tuple.isEmpty() }
         }
     }
-
-    private val element = AtomicInteger(1)
 
     @TestFactory
     fun iterator() = TestSet.map { (name, tuple) ->
