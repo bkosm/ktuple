@@ -7,16 +7,17 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 import kotlin.test.expect
 
-private val TestSet = listOf(
-    t("Of1", t(1)),
-    t("Of2", t(1, 2L)),
-    t("Of3", t(1, 2L, 3.0)),
-    t("Of4", t(1, 2L, 3.0, 4)),
-    t("Of5", t(1, 2L, 3.0, 4, 5L)),
-    t("Of6", t(1, 2L, 3.0, 4, 5L, 6.0)),
-)
-
 class ParameterizedVariationsTest {
+    companion object {
+        private val TestSet = listOf(
+            t("Of1", t(1)),
+            t("Of2", t(1, 2L)),
+            t("Of3", t(1, 2L, 3.0)),
+            t("Of4", t(1, 2L, 3.0, 4)),
+            t("Of5", t(1, 2L, 3.0, 4, 5L)),
+            t("Of6", t(1, 2L, 3.0, 4, 5L, 6.0)),
+        )
+    }
 
     @TestFactory
     fun contains() = TestSet.map { (name, tuple) ->
