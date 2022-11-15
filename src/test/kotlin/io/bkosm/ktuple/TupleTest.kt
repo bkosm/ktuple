@@ -53,7 +53,7 @@ internal class TupleTest {
 
     @Test
     fun `null only tuple is considered empty`() {
-        assertTrue { Tuple(null).isEmpty() }
+        assertTrue { Tuple(null, null).isEmpty() }
     }
 
     @Test
