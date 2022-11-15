@@ -1,7 +1,9 @@
 package io.bkosm.ktuple
 
 import org.junit.jupiter.api.DynamicTest.dynamicTest
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
+import java.util.Optional
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -62,5 +64,22 @@ internal class ParameterizedVariationsTest {
         dynamicTest("for $name") {
             expect(element.getAndIncrement()) { tuple.size }
         }
+    }
+
+    @Suppress("MoveVariableDeclarationIntoWhen")
+    @Test
+    fun `handles 'when' statement`() {
+        val uut: Tuple = TestSet.map { it._2 }.maxByOrNull { it.size }!!
+
+        val result = when (uut) {
+            is Tuple.Of1<*> -> Optional.empty()
+            is Tuple.Of2<*, *> -> Optional.empty()
+            is Tuple.Of3<*, *, *> -> Optional.empty()
+            is Tuple.Of4<*, *, *, *> -> Optional.empty()
+            is Tuple.Of5<*, *, *, *, *> -> Optional.empty()
+            is Tuple.Of6<*, *, *, *, *, *> -> Optional.of(1)
+        }
+
+        assertTrue { result.isPresent }
     }
 }
