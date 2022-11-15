@@ -46,6 +46,18 @@ internal class ParameterizedVariationsTest {
     private val element = AtomicInteger(1)
 
     @TestFactory
+    fun iterator() = TestSet.map { (name, tuple) ->
+        dynamicTest("for $name") {
+            var runs = 0
+            for (any in tuple) {
+                runs++
+            }
+
+            expect(element.getAndIncrement()) { runs }
+        }
+    }
+
+    @TestFactory
     fun size() = TestSet.map { (name, tuple) ->
         dynamicTest("for $name") {
             expect(element.getAndIncrement()) { tuple.size }
