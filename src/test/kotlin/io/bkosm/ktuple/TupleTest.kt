@@ -22,8 +22,8 @@ internal class TupleTest {
 
     @Test
     fun `there is a 'containsAll' check`() {
-        assertTrue { uut.containsAll(listOf(1)) }
-        assertFalse { uut.containsAll(listOf(1, 2)) }
+        assertTrue { uut.containsAll(listOf<Any?>(1)) }
+        assertFalse { uut.containsAll(listOf<Any?>(1, 2)) }
     }
 
     @Test
