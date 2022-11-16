@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    jacoco
 }
 
 group = "io.github.bkosm"
@@ -15,10 +16,18 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+tasks {
+    test {
+        useJUnitPlatform()
+    }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    jacocoTestReport {
+        reports {
+            csv.required.set(true)
+        }
+    }
 }
