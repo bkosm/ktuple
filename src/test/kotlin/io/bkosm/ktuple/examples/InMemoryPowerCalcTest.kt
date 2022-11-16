@@ -1,13 +1,13 @@
 package io.bkosm.ktuple.examples
 
-import io.bkosm.ktuple.examples.LocalPowerCalcTest.PowerCalc
+import io.bkosm.ktuple.examples.InMemoryPowerCalcTest.PowerCalc
 import io.bkosm.ktuple.t
 import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 import kotlin.math.pow
 import kotlin.test.expect
 
-internal class LocalPowerCalcTest {
+internal class InMemoryPowerCalcTest {
 
     fun interface PowerCalc : (Number, Double) -> Double {
         companion object
