@@ -32,9 +32,12 @@ jobs:
         run: ./gradlew test
       - name: Run Test Coverage
         run: ./gradlew jacocoTestReport
-
       - name: Generate JaCoCo Badge
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
           jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Commit badges
+          file_pattern: '.github/badges/*'
