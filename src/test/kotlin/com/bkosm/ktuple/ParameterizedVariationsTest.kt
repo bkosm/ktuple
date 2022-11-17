@@ -1,4 +1,4 @@
-package io.bkosm.ktuple
+package com.bkosm.ktuple
 
 import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.Test

@@ -6,9 +6,10 @@ plugins {
     `maven-publish`
 }
 
-val versionString = "1.0.1"
+val versionString = "1.0.2"
+val groupString = "com.github.bkosm"
 
-group = "io.github.bkosm"
+group = groupString
 version = versionString
 
 repositories {
@@ -38,8 +39,8 @@ tasks {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "io.github.bkosm"
             artifactId = "ktuple"
+            groupId = groupString
             version = versionString
 
             from(components["java"])

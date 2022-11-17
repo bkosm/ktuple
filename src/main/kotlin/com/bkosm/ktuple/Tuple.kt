@@ -1,4 +1,4 @@
-package io.bkosm.ktuple
+package com.bkosm.ktuple
 
 sealed class Tuple private constructor(vararg elements: Any?) : Collection<Any?> {
     private val orderedValues = elements.toList()

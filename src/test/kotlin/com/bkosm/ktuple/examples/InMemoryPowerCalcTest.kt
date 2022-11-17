@@ -1,7 +1,7 @@
-package io.bkosm.ktuple.examples
+package com.bkosm.ktuple.examples
 
-import io.bkosm.ktuple.examples.InMemoryPowerCalcTest.PowerCalc
-import io.bkosm.ktuple.t
+import com.bkosm.ktuple.examples.InMemoryPowerCalcTest.PowerCalc
+import com.bkosm.ktuple.t
 import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 import kotlin.math.pow
