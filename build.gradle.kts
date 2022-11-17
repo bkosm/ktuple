@@ -3,10 +3,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm")
     jacoco
+    `maven-publish`
 }
 
+val versionString = "1.0.1"
+
 group = "io.github.bkosm"
-version = "1.0"
+version = versionString
 
 repositories {
     mavenCentral()
@@ -28,6 +31,18 @@ tasks {
     jacocoTestReport {
         reports {
             csv.required.set(true)
+        }
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "io.github.bkosm"
+            artifactId = "ktuple"
+            version = versionString
+
+            from(components["java"])
         }
     }
 }
