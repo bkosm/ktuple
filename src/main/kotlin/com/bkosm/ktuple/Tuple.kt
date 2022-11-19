@@ -41,25 +41,37 @@ sealed class Tuple private constructor(vararg elements: Any?) : Collection<Any?>
 
     data class Of1<T1>(
         val _1: T1
-    ) : Tuple(_1)
+    ) : Tuple(_1) {
+        companion object
+    }
 
     data class Of2<T1, T2>(
         val _1: T1, val _2: T2
-    ) : Tuple(_1, _2)
+    ) : Tuple(_1, _2) {
+        companion object
+    }
 
     data class Of3<T1, T2, T3>(
         val _1: T1, val _2: T2, val _3: T3
-    ) : Tuple(_1, _2, _3)
+    ) : Tuple(_1, _2, _3) {
+        companion object
+    }
 
     data class Of4<T1, T2, T3, T4>(
         val _1: T1, val _2: T2, val _3: T3, val _4: T4
-    ) : Tuple(_1, _2, _3, _4)
+    ) : Tuple(_1, _2, _3, _4) {
+        companion object
+    }
 
     data class Of5<T1, T2, T3, T4, T5>(
         val _1: T1, val _2: T2, val _3: T3, val _4: T4, val _5: T5
-    ) : Tuple(_1, _2, _3, _4, _5)
+    ) : Tuple(_1, _2, _3, _4, _5) {
+        companion object
+    }
 
     data class Of6<T1, T2, T3, T4, T5, T6>(
         val _1: T1, val _2: T2, val _3: T3, val _4: T4, val _5: T5, val _6: T6
-    ) : Tuple(_1, _2, _3, _4, _5, _6)
+    ) : Tuple(_1, _2, _3, _4, _5, _6) {
+        companion object
+    }
 }
