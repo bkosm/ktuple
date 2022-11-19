@@ -6,6 +6,7 @@ import org.junit.jupiter.api.TestFactory
 import java.util.Optional
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.test.assertFalse
+import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 import kotlin.test.expect
 
@@ -52,6 +53,13 @@ internal class ParameterizedVariationsTest {
     fun size() = AllVariations.map { (name, tuple) ->
         dynamicTest("for $name") {
             expect(element.getAndIncrement()) { tuple.size }
+        }
+    }
+
+    @TestFactory
+    fun appendOrNull() = AllVariations.dropLast(1).map { (name, tuple) ->
+        dynamicTest("for $name") {
+            assertNotNull(tuple.appendOrNull(null))
         }
     }
 
