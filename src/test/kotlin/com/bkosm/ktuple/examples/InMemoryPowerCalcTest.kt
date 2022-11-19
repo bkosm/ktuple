@@ -1,7 +1,9 @@
 package com.bkosm.ktuple.examples
 
+import com.bkosm.ktuple.Tuple
 import com.bkosm.ktuple.examples.InMemoryPowerCalcTest.PowerCalc
 import com.bkosm.ktuple.t
+import com.bkosm.ktuple.u
 import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 import kotlin.math.pow
@@ -18,15 +20,14 @@ internal class InMemoryPowerCalcTest {
 
     @TestFactory
     fun `it works!`() = listOf(
-        t(1, 2, 1.0, "with exponent of 2"),
-        t(2, 2, 4.0, "with base of 2"),
-        t(3, 3, 27.0, "with exponents higher than 2"),
-        t(2.2, 3.3, 13.489468760533386, "with doubles")
+        1 u 2 u 1.0 u "with exponent of 2",
+        2 u 2 u 4.0 u "with base of 2",
+        3 u 3 u 27.0 u "with exponents higher than 2",
+        2.2 u 3.3 u 13.489468760533386 u "with doubles",
     ).map { (a, b, result, name) ->
         dynamicTest(name) {
             val uut = PowerCalc.inMemory
             expect(result) { uut(a, b.toDouble()) }
         }
     }
-
 }
