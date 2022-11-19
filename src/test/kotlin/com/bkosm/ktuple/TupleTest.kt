@@ -78,4 +78,13 @@ internal class TupleTest {
 
         expect(listOf<Any?>(1, 2, 3, 4.0)) { res }
     }
+
+    @Test
+    fun `you can also append to the tuple itself`() {
+        val resultForValidTuple = uut.appendOrNull(2.0)
+        val resultForOverflow = AllVariations.last().second.appendOrNull(2.0)
+
+        expect(t(1, 2.0)) { resultForValidTuple }
+        expect(null) { resultForOverflow }
+    }
 }
