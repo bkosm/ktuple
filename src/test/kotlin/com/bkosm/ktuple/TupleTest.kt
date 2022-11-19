@@ -7,7 +7,7 @@ import kotlin.test.assertTrue
 import kotlin.test.expect
 
 internal class TupleTest {
-    private val uut: Tuple.Of1<Int> = Tuple(1)
+    private val uut: Tuple = Tuple(1)
 
     @Test
     fun `there is a size property`() {
@@ -28,13 +28,15 @@ internal class TupleTest {
 
     @Test
     fun `can be inline destructured`() {
-        val (first) = uut
+        val (first) = uut as Tuple.Of1<*>
 
         expect(1) { first }
     }
 
     @Test
     fun `values can be accessed via properties`() {
+        uut as Tuple.Of1<*>
+
         expect(1) { uut._1 }
     }
 
@@ -74,9 +76,9 @@ internal class TupleTest {
 
     @Test
     fun `plus operator converts tuples into a list`() {
-        val res = uut + t(2, 3) + t(4.0)
+        val res = uut + t(2, 3) + t(4.0) + listOf(5f)
 
-        expect(listOf<Any?>(1, 2, 3, 4.0)) { res }
+        expect(listOf<Any?>(1, 2, 3, 4.0, 5f)) { res }
     }
 
     @Test
@@ -92,15 +94,15 @@ internal class TupleTest {
         val resultForOverflow = AllVariations.last().second.appendOrNull(2.0)
 
         expect(t(1, 2.0)) { resultForValidTuple }
-        expect(null) { resultForOverflow }
+        assertNull(resultForOverflow)
     }
 
     @Test
     fun `there is a typesafe and fancy inline factory`() {
         val fullResult = 1 u 2 u 3 u 4 u 5 u 6
-        val overflownResult: Tuple = 1 u 2 u 3 u 4 u 5 u 6 u 7
+        val overflownResult: Tuple = 1 u 2 u 3 u 4 u 5 u 6 u 7 u 8
 
         expect(t(1, 2, 3, 4, 5, 6)) { fullResult }
-        expect(t(fullResult, 7)) { overflownResult }
+        expect(t(fullResult, 7, 8)) { overflownResult }
     }
 }
