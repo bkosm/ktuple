@@ -16,7 +16,7 @@ internal class InMemoryPowerCalcTest {
         get() = PowerCalc { a, b -> a.toDouble().pow(b) }
 
     @TestFactory
-    fun `it works!`() = listOf(
+    fun `handles exponentiation as expected`() = listOf(
         1 w 2 w 1.0 w "with exponent of 2",
         2 w 2 w 4.0 w "with base of 2",
         3 w 3 w 27.0 w "with exponents higher than 2",
