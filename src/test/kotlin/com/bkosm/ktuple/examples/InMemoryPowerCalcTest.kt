@@ -8,7 +8,6 @@ import kotlin.math.pow
 import kotlin.test.expect
 
 internal class InMemoryPowerCalcTest {
-
     fun interface PowerCalc : (Number, Double) -> Double {
         companion object
     }
