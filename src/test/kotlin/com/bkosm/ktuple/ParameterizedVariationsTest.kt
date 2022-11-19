@@ -69,12 +69,12 @@ internal class ParameterizedVariationsTest {
         val uut: Tuple = AllVariations.map { it.second }.maxByOrNull { it.size }!!
 
         val result = when (uut) {
-            is Tuple.Of1<*> -> Optional.empty()
-            is Tuple.Of2<*, *> -> Optional.empty()
-            is Tuple.Of3<*, *, *> -> Optional.empty()
-            is Tuple.Of4<*, *, *, *> -> Optional.empty()
-            is Tuple.Of5<*, *, *, *, *> -> Optional.empty()
-            is Tuple.Of6<*, *, *, *, *, *> -> Optional.of(1)
+            is TupleOf1 -> Optional.empty()
+            is TupleOf2 -> Optional.empty()
+            is TupleOf3 -> Optional.empty()
+            is TupleOf4 -> Optional.empty()
+            is TupleOf5 -> Optional.empty()
+            is TupleOf6 -> Optional.of(1)
         }
 
         assertTrue { result.isPresent }

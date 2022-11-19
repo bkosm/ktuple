@@ -28,14 +28,14 @@ internal class TupleTest {
 
     @Test
     fun `can be inline destructured`() {
-        val (first) = uut as Tuple.Of1<*>
+        val (first) = uut as TupleOf1
 
         expect(1) { first }
     }
 
     @Test
     fun `values can be accessed via properties`() {
-        uut as Tuple.Of1<*>
+        uut as TupleOf1
 
         expect(1) { uut._1 }
     }
