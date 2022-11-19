@@ -80,6 +80,13 @@ internal class TupleTest {
     }
 
     @Test
+    fun `you can search and do all of the collection operations`() {
+        val res = uut.firstOrNull { it == 1 }
+
+        expect(1) { res }
+    }
+
+    @Test
     fun `you can also append to the tuple itself`() {
         val resultForValidTuple = uut.appendOrNull(2.0)
         val resultForOverflow = AllVariations.last().second.appendOrNull(2.0)
