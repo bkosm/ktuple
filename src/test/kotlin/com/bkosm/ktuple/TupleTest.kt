@@ -94,4 +94,13 @@ internal class TupleTest {
         expect(t(1, 2.0)) { resultForValidTuple }
         expect(null) { resultForOverflow }
     }
+
+    @Test
+    fun `there is a typesafe and fancy inline factory`() {
+        val fullResult = 1 u 2 u 3 u 4 u 5 u 6
+        val overflownResult: Tuple = 1 u 2 u 3 u 4 u 5 u 6 u 7
+
+        expect(t(1, 2, 3, 4, 5, 6)) { fullResult }
+        expect(t(fullResult, 7)) { overflownResult }
+    }
 }
