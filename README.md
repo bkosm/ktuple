@@ -7,21 +7,19 @@
 
 ## easy to use tuples to speed up the creation of dynamic tests
 
-https://github.com/bkosm/ktuple/blob/df512179ce058865822f448c049bbfe9f1872a4b/src/test/kotlin/io/bkosm/ktuple/examples/InMemoryPowerCalcTest.kt#L10-L32
+https://github.com/bkosm/ktuple/blob/177d3df260289116ef5420cc8ad1f64a75f26387/src/test/kotlin/com/bkosm/ktuple/examples/InMemoryPowerCalcTest.kt#L18-L29
 
 ## tests make the best documentation
 
-https://github.com/bkosm/ktuple/blob/911c231bb61ce6cf03edf01a8aed6fbad8b847b0/src/test/kotlin/io/bkosm/ktuple/TupleTest.kt#L9-L65
+https://github.com/bkosm/ktuple/blob/7e5b3b52347e645aa60043dff2f3f97dcfbd6e88/src/test/kotlin/com/bkosm/ktuple/TupleTest.kt#L9-L108
 
 ## currently available via JitPack
 
 ```kts
-import java.net.URI
-
 repositories {
     // all the other ones that you might need...
 
-    maven { url = URI("https://jitpack.io") }
+    maven { url = uri("https://jitpack.io") }
 }
 
 // and then
@@ -35,4 +33,4 @@ dependencies {
 
 ## you decide on the features!
 
-Drop an issue with what functionality you could use in your Kotlin tuple (if you didn't already write a extenstion function for it).
+Drop an issue with what functionality you could use in your Kotlin tuple or submit a PR!
