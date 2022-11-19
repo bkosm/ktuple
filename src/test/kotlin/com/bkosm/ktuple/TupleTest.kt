@@ -71,4 +71,11 @@ internal class TupleTest {
 
         expect(t(1, 3.0)) { uut.copy(_2 = 3.0) }
     }
+
+    @Test
+    fun `plus operator converts tuples into a list`() {
+        val res = uut + t(2, 3) + t(4.0)
+
+        expect(listOf<Any?>(1, 2, 3, 4.0)) { res }
+    }
 }
