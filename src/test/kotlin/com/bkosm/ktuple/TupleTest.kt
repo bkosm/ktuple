@@ -68,8 +68,8 @@ internal class TupleTest {
     }
 
     @Test
-    fun `you can do a standard copy to change a value`() {
-        val uut = t(1, 2.0)
+    fun `you can do a standard data class 'copy' when the full type is present`() {
+        val uut: Tuple.Of2<Int, Double> = t(1, 2.0)
 
         expect(t(1, 3.0)) { uut.copy(_2 = 3.0) }
     }
