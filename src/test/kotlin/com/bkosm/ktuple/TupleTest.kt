@@ -41,7 +41,9 @@ internal class TupleTest {
     @Test
     fun `can be iterated over`() {
         var runs = 0
-        for (any in uut) { runs++ }
+        for (any in uut) {
+            runs++
+        }
 
         expect(1) { runs }
     }
@@ -61,5 +63,12 @@ internal class TupleTest {
         val uut = t(null)
 
         assertNull(uut._1)
+    }
+
+    @Test
+    fun `you can do a standard copy to change a value`() {
+        val uut = t(1, 2.0)
+
+        expect(t(1, 3.0)) { uut.copy(_2 = 3.0) }
     }
 }
