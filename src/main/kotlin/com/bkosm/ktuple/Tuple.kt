@@ -14,12 +14,12 @@ sealed class Tuple private constructor(vararg elements: Any?) : Collection<Any?>
     override val size = orderedValues.size
 
     fun appendOrNull(element: Any?): Tuple? = when (this) {
-        is To1 -> Companion(_1, element)
-        is To2 -> Companion(_1, _2, element)
-        is To3 -> Companion(_1, _2, _3, element)
-        is To4 -> Companion(_1, _2, _3, _4, element)
-        is To5 -> Companion(_1, _2, _3, _4, _5, element)
-        is To6 -> null
+        is TupleOf1 -> Companion(_1, element)
+        is TupleOf2 -> Companion(_1, _2, element)
+        is TupleOf3 -> Companion(_1, _2, _3, element)
+        is TupleOf4 -> Companion(_1, _2, _3, _4, element)
+        is TupleOf5 -> Companion(_1, _2, _3, _4, _5, element)
+        is TupleOf6 -> null
     }
 
     companion object {
