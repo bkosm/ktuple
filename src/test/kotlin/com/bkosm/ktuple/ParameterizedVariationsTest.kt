@@ -74,7 +74,11 @@ internal class ParameterizedVariationsTest {
             is TupleOf3 -> Optional.empty()
             is TupleOf4 -> Optional.empty()
             is TupleOf5 -> Optional.empty()
-            is TupleOf6 -> Optional.of(1)
+            is TupleOf6 -> Optional.empty()
+            is TupleOf7 -> Optional.empty()
+            is TupleOf8 -> Optional.empty()
+            is TupleOf9 -> Optional.empty()
+            is TupleOf10 -> Optional.of(1)
         }
 
         assertTrue { result.isPresent }
