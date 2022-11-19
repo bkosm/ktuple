@@ -21,7 +21,7 @@ internal class InMemoryPowerCalcTest {
         2 w 2 w 4.0 w "with base of 2",
         3 w 3 w 27.0 w "with exponents higher than 2",
         2.2 w 3.3 w 13.489468760533386 w "with doubles",
-    ).map { (a, b, result, name) ->
+    ).map { (a: Number, b: Number, result: Double, name: String) ->
         dynamicTest(name) {
             val uut = PowerCalc.inMemory
             expect(result) { uut(a, b.toDouble()) }
