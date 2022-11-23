@@ -6,7 +6,7 @@ plugins {
     `maven-publish`
 }
 
-val versionString = "1.1.0"
+val versionString = "1.2.0"
 val groupString = "com.github.bkosm"
 
 group = groupString
