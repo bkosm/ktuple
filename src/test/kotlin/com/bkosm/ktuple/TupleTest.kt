@@ -75,6 +75,13 @@ internal class TupleTest {
     }
 
     @Test
+    fun `you can do a copy with type change through a member function when the full type is present`() {
+        val uut: Tuple.Of2<Int, Double> = t(1, 2.0)
+
+        expect(t(null, "hey!")) { uut._2("hey!")._1(null) }
+    }
+
+    @Test
     fun `plus operator converts tuples into a list`() {
         val res = uut + t(2, 3) + t(4.0) + listOf(5f)
 
