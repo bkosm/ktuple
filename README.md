@@ -7,7 +7,7 @@
 
 ## easy to use tuples to speed up the creation of dynamic tests
 
-https://github.com/bkosm/ktuple/blob/177d3df260289116ef5420cc8ad1f64a75f26387/src/test/kotlin/com/bkosm/ktuple/examples/InMemoryPowerCalcTest.kt#L18-L29
+https://github.com/bkosm/ktuple/blob/593a02d7ac1040d0af5c939856355d90f065468b/src/test/kotlin/com/bkosm/ktuple/TupleTest.kt#L9-L115
 
 ## tests make the best documentation
 
@@ -27,7 +27,7 @@ repositories {
 dependencies {
     // all the other ones that you might need...
     
-    testImplementation("com.github.bkosm:ktuple:1.1.0")
+    testImplementation("com.github.bkosm:ktuple:1.2.0")
 }
 ```
 
