@@ -30,7 +30,7 @@ repositories {
 dependencies {
     // all the other ones that you might need...
     
-    testImplementation("com.github.bkosm:ktuple:1.2.0")
+    testImplementation("com.github.bkosm:ktuple:1.3.0")
 }
 ```
 
