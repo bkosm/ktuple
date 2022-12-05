@@ -1,6 +1,7 @@
 package com.bkosm.ktuple
 
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertFalse
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
@@ -38,6 +39,12 @@ internal class TupleTest {
         uut as TupleOf1
 
         expect(1) { uut._1 }
+    }
+
+    @Test
+    fun `values can be accessed via indexing`() {
+        expect(1) { uut[0] }
+        assertThrows<IndexOutOfBoundsException> { uut[1] }
     }
 
     @Test

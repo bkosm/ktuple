@@ -27,6 +27,8 @@ sealed class Tuple private constructor(vararg elements: Any?) : Collection<Any?>
         is TupleOf10 -> null
     }
 
+    operator fun get(i: Int) = orderedValues[i]
+
     companion object {
         operator fun <T1> invoke(
             _1: T1
