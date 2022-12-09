@@ -1,4 +1,4 @@
-name: CI
+name: Tests
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
     paths: [ '.github/workflows/**', 'gradle/**', 'src/**', '*.gradle.kts', '*.properties' ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
