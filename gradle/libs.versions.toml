@@ -2,7 +2,9 @@
 
 [plugins]
 
-org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.7.10" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.6.21" }
+
+org-owasp-dependencycheck = { id = "org.owasp.dependencycheck", version = "7.4.1" }
 
 [versions]
 
