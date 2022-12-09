@@ -1,6 +1,7 @@
 # ktuple
 
-![tests](https://github.com/bkosm/ktuple/actions/workflows/gradle.yml/badge.svg)
+![tests](https://github.com/bkosm/ktuple/actions/workflows/tests.yml/badge.svg)
+![dependencies](https://github.com/bkosm/ktuple/actions/workflows/dependencies.yml/badge.svg)
 ![coverage](.github/badges/jacoco.svg)
 ![branches](.github/badges/branches.svg)
 [![](https://jitpack.io/v/bkosm/ktuple.svg)](https://jitpack.io/#bkosm/ktuple)
